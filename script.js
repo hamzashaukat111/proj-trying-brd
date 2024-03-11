@@ -35,7 +35,7 @@ $(document).ready(function () {
         data: formData,
         contentType: contentType,
         headers: {
-          "Ocp-Apim-Subscription-Key": "YOUR_AZURE_SUBSCRIPTION_KEY", // Replace with your actual key
+          "Ocp-Apim-Subscription-Key": "169ba26709814440839c99da449b5421", // Replace with your actual key
         },
         success: function (response) {
           console.log(response);
