@@ -36,7 +36,8 @@ $(document).ready(function () {
       type: "POST",
       data: formData,
       processData: false,
-      contentType: "application/octet-stream",
+      //   contentType: "application/octet-stream",
+      contentType: "multipart/form-data",
       headers: {
         "Ocp-Apim-Subscription-Key": "169ba26709814440839c99da449b5421",
       },
