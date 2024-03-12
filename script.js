@@ -22,15 +22,36 @@ $(document).ready(function () {
   });
 
   captureButton.addEventListener("click", function () {
-    context.drawImage(video, 0, 0, 400, 300);
+    // Capture the current dimensions of the video
+    var width = video.videoWidth;
+    var height = video.videoHeight;
+
+    // Set the canvas dimensions to match the video dimensions
+    canvas.width = width;
+    canvas.height = height;
+
+    // Draw the video frame onto the canvas
+    context.drawImage(video, 0, 0, width, height);
+
+    // Convert the canvas content to a blob
     canvas.toBlob(function (blob) {
+      console.log("blob.type is ", blob.type);
+      console.log("dimensions width is ", width);
+      console.log("dimensions height is ", height);
+
       var formData = new FormData();
       formData.append("image", blob);
-      console.log("blob.type is ", blob.type);
-      console.log("dimensions width is ", blob.width);
-      console.log("dimensions height is ", blob.height);
-
       processImage(formData);
+      // context.drawImage(video, 0, 0, 400, 300);
+      // canvas.toBlob(function (blob) {
+      //   var formData = new FormData();
+      //   formData.append("image", blob);
+      //   console.log("blob.type is ", blob.type);
+      //   console.log("dimensions width is ", blob.width);
+      //   console.log("dimensions height is ", blob.height);
+      //   console.log('formData is ', formData);
+
+      //   processImage(formData);
     });
   });
 
