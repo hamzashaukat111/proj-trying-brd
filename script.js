@@ -26,11 +26,16 @@ $(document).ready(function () {
     canvas.toBlob(function (blob) {
       var formData = new FormData();
       formData.append("image", blob);
+      console.log("blob.type is ", blob.type);
+      console.log("dimensions are ", console.log(blob.width, blob.height));
+
       processImage(formData);
     });
   });
 
   function processImage(formData) {
+    console.log("blob.type is ", blob.type);
+    console.log("dimensions are ", console.log(blob.width, blob.height));
     $.ajax({
       url: "https://cv-instance-analyseimg-northeur.cognitiveservices.azure.com/computervision/imageanalysis:analyze?api-version=2024-02-01&features=people&model-version=latest&language=en&gender-neutral-caption=False",
       type: "POST",
