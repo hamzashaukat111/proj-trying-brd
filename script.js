@@ -27,7 +27,8 @@ $(document).ready(function () {
       var formData = new FormData();
       formData.append("image", blob);
       console.log("blob.type is ", blob.type);
-      console.log("dimensions are ", console.log(blob.width, blob.height));
+      console.log("dimensions width is ", blob.width);
+      console.log("dimensions height is ", blob.height);
 
       processImage(formData);
     });
